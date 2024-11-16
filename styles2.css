@@ -1,0 +1,97 @@
+body {
+    background-image: url("https://i.pinimg.com/564x/9e/33/18/9e3318949a706696a99e86ac3e8f5dc2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%
+
+}
+
+.Title {
+    display: inline-flex;
+    font-size: 100px;
+    color: black;
+    width: 550px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    font-family:fantasy;
+    font-weight: 200;
+    padding-left: 30px;
+    text-shadow: 0 0 10px rgb(255, 255, 255), 
+                 0 0 20px rgb(255, 255, 255), 
+                 0 0 30px rgb(255, 255, 255), 
+                 0 0 40px rgb(255, 255, 255);
+}           
+
+.navbar {
+    display: flex;
+    margin: 20px auto 20px auto;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 40px;
+    border-radius: 30px;
+    transition: 0.3s;
+    width: 98.5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0px 0px 20px;
+    border: none;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+
+.navbar nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 100px auto;
+    display: inline-flex;
+    list-style: none;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.navbar nav ul {
+    text-align: center;
+    margin: 0px auto;
+    justify-content: space-evenly;
+}
+.navB {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 40px;
+    border-radius: 30px;
+    transition: 0.3s;
+    width: 250px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: none;
+    justify-content: space-evenly;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.navB:hover {
+    scale:1.1;
+    box-shadow: 0px 0px 30px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img {
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px;
+}
+
+.Profile {
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px;
+    margin-right: 30px;
+}
+
+.logo {
+    margin-left: 10px;
+}

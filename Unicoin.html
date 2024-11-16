@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni Coin System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://i.pinimg.com/564x/9e/33/18/9e3318949a706696a99e86ac3e8f5dc2.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 35px;
+            text-align: center;
+            width: 380px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        .coin-balance {
+            font-size: 26px;
+            margin: 30px 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 22px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .button:active {
+            transform: scale(0.98);
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 320px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .coin-balance {
+                font-size: 24px;
+            }
+            .button {
+                font-size: 20px;
+                padding: 14px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Uni Coins</h1>
+        <div class="coin-balance" id="coinBalance">Uni Coins Left: 100</div>
+        <button class="button" onclick="redeemCoins()">Redeem Coupons</button>
+    </div>
+
+    <script>
+        let coins = 100;
+
+        function redeemCoins() {
+            if (coins > 0) {
+                coins -= 10;
+                document.getElementById('coinBalance').innerText = `Uni Coins Left: ${coins}`;
+                alert('You have redeemed 10 Uni Coins for a coupon!');
+            } else {
+                alert('You do not have enough Uni Coins to redeem a coupon.');
+            }
+        }
+    </script>
+
+</body>
+</html>

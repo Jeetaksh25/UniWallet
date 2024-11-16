@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+
+    <style>
+        body {
+            background-image: url("https://i.pinimg.com/564x/9e/33/18/9e3318949a706696a99e86ac3e8f5dc2.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 100%;
+        }
+        .LimitC {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(148, 140, 140, 0.434);
+            height: 650px;
+            width: 60%;
+            margin: 200px auto;
+            border-radius: 40px;
+        }
+        .Limit, .Amount {
+            margin: 20px auto 30px auto;
+            height: 100px;
+            width: 800px;
+            border-radius: 30px;
+            font-size: 40px;
+            text-align: center;
+            background-color: rgb(173, 217, 255);
+            box-shadow: 0px 0px 20px rgb(0, 0, 0);
+            border: none;
+        }
+        .Limit:focus, .Amount:focus {
+            background-color: rgb(241, 241, 241);
+            scale: 1.1;
+            border: none;
+            outline: none;
+            box-shadow: 0px 0px 30px rgb(255, 255, 255);
+        }
+
+        .Submit {
+            font-size: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+            margin-right: 40px;
+            border-radius: 30px;
+            background-color: rgb(173, 217, 255);
+            width: 300px;
+            height: 120px;
+            transition: 0.3s;
+            box-shadow: 0px 0px 20px white;
+            border: none;
+
+        }
+        .Submit:hover {
+            scale: 1.1;
+            box-shadow: 0px 0px 30px white;
+            background-color: rgb(255, 255, 255);
+        }
+        .Submit:active {
+            scale: 0.9;
+            box-shadow: 0px 0px 10px white;
+            background-color: rgb(255, 255, 255);
+        }
+        .header {
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 20px auto 20px auto;
+            background-color: rgba(195, 195, 195, 0.604);
+            font-size: 40px;
+            border-radius: 30px;
+            transition: 0.3s;
+            width: 550px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: none;
+            justify-content: space-evenly;
+            margin-left: 50px;
+            margin-right: 30px;
+            margin-top: 50px;
+        }
+        .B {
+            margin-top: 30px;
+            font-size: 50px;
+        }
+        #balance-display {
+            margin-left: -30px;
+            margin-top: 38px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <div><img src="https://cdn-icons-png.flaticon.com/512/493/493389.png" width="100px"></div>
+        <div class="B">Balance</div>
+        <div id="balance-display"></div>
+    </div>
+    <div class="LimitC">
+        <div>
+            <input type="text" placeholder="Enter amount to add" class="Amount" id="addAmount">
+        </div>
+        <div>
+            <input type="text" placeholder="Enter amount to deduct" class="Amount" id="deductAmount">
+        </div>
+        <div><button class="Submit" id="addButton">Add Money</button></div>
+        <div><button class="Submit" id="deductButton">Deduct Money</button></div>
+    </div>
+
+    <script>
+
+        let WBalance = 0; 
+
+        let balanceElement = document.getElementById('balance-display');
+        balanceElement.textContent = `: $${WBalance}`;
+
+        const addButton = document.getElementById('addButton');
+        const deductButton = document.getElementById('deductButton');
+        const addAmountInput = document.getElementById('addAmount');
+        const deductAmountInput = document.getElementById('deductAmount');
+        
+     
+        addButton.addEventListener('click', () => {
+            const addAmount = parseInt(addAmountInput.value); 
+            if (!isNaN(addAmount) && addAmount > 0) {
+                WBalance += addAmount; 
+                balanceElement.textContent = `: $${WBalance}`; 
+                alert(`Successfully added $${addAmount} to your wallet.`);
+                addAmountInput.value = ''; 
+            } else {
+                alert("Please enter a valid amount to add.");
+            }
+        });
+
+ 
+        deductButton.addEventListener('click', () => {
+            const deductAmount = parseInt(deductAmountInput.value); 
+            if (!isNaN(deductAmount) && deductAmount > 0 && deductAmount <= WBalance) {
+                WBalance -= deductAmount; 
+                balanceElement.textContent = `: $${WBalance}`; 
+                alert(`Successfully deducted $${deductAmount} from your wallet.`);
+                deductAmountInput.value = ''; 
+            } else {
+                alert("Please enter a valid amount to deduct (within your balance).");
+            }
+        });
+    </script>
+</body>
+</html>
